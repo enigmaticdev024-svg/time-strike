@@ -1,0 +1,16 @@
+/* Root CSS entry point */
+@import url("./base/base.css");
+
+@import url("./components/buttons.css");
+@import url("./components/github-link.css");
+@import url("./components/particle.css");
+@import url("./components/score.css");
+@import url("./components/timer.css");
+
+@import url("./layout/containers.css");
+
+@import url("./screens/end-screen.css");
+@import url("./screens/game.css");
+@import url("./screens/mode-selection.css");
+
+@import url("./utils/animations.css");

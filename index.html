@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>T-Strike</title>
+    <link rel="icon" type="image/ico" href="assets/images/favicon.ico" />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <main>
+      <!-- Back to Menu button (dynamically shown/hidden) -->
+      <button id="back-to-menu-btn" class="back-btn" hidden>
+        Back to Menu
+      </button>
+
+      <!-- Main Menu -->
+      <section id="menu" class="menu-container screen">
+        <h1>T-Strike</h1>
+        <div class="menu-buttons">
+          <button id="tutorial-btn" class="menu-btn">Instructions</button>
+          <button id="modes-btn" class="menu-btn">Play</button>
+        </div>
+      </section>
+
+      <!-- Tutorial / Instructions Screen -->
+      <section id="tutorial" class="tutorial-container screen" hidden>
+        <h2>How to Play</h2>
+        <ol class="tutorial-steps">
+          <li>Click "Start" to launch the timer.</li>
+          <li>
+            Try to stop the timer by clicking "Stop" exactly on the
+            <strong>target time</strong>.
+          </li>
+          <li>The closer you are to the target time, the better your score!</li>
+          <li>Train your precision and reflexes to beat your personal best.</li>
+        </ol>
+        <p>Press "Play" in the menu to start a real game.</p>
+      </section>
+
+      <!-- Game Modes Selection Screen -->
+      <section
+        id="mode-selection"
+        class="mode-selection-container screen"
+        hidden
+      >
+        <h2>Mode Selection</h2>
+        <p class="mode-instruction">Click to select a mode or use ↑ / ↓</p>
+        <div class="mode-wrapper">
+          <div id="prev-mode" class="mode-option mode-option-small"></div>
+          <div id="current-mode" class="mode-option mode-option-selected"></div>
+          <div id="next-mode" class="mode-option mode-option-small"></div>
+        </div>
+      </section>
+
+      <!-- Game Screen -->
+      <section id="game" class="game-container screen" hidden>
+        <h2 id="mode-title">Perfection</h2>
+
+        <!-- Score + Precision Display -->
+        <div class="score-streak-container">
+          <div class="streak-container">
+            <span id="current-streak">0</span>
+          </div>
+          <div class="separator-container">
+            <span class="separator">|</span>
+          </div>
+          <div class="precision-container">
+            <div class="precision-wrapper">
+              <span id="precision-difference" hidden>+0%</span>
+              <span id="current-precision">0%</span>
+            </div>
+          </div>
+          <div class="separator-container">
+            <span class="separator">|</span>
+          </div>
+          <div class="score-container">
+            <div class="score-wrapper">
+              <span id="current-score">0</span>
+              <span id="score-gain" class="score-gain hidden">+0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Target Time -->
+        <p class="target-time">Target Time: <span id="target">5.00</span>s</p>
+
+        <!-- Timer and Progress Circle -->
+        <div class="timer-container">
+          <div id="timer-wrapper" class="timer-wrapper">
+            <div id="timer" class="timer" aria-live="polite">0s</div>
+          </div>
+          <svg class="progress-ring" width="160" height="160">
+            <circle
+              class="progress-ring-circle"
+              stroke="#ffffff"
+              stroke-width="8"
+              fill="transparent"
+              r="70"
+              cx="80"
+              cy="80"
+            />
+          </svg>
+        </div>
+
+        <!-- Start/Stop Button + Congratulation Message -->
+        <div id="restart-container">
+          <button id="start-stop-btn">START</button>
+          <div id="congrats-msg" class="hidden">CONGRATULATIONS, YOU WIN!</div>
+        </div>
+
+        <!-- Game Feedback -->
+        <p
+          id="time-difference-msg"
+          class="time-difference-msg"
+          aria-live="polite"
+        ></p>
+        <p id="result-msg" class="result-msg" aria-live="polite"></p>
+
+        <!-- Effects Layer -->
+        <div id="particle-rain"></div>
+      </section>
+
+      <!-- Placeholder for future multiplayer feature -->
+      <section id="multiplayer" class="multiplayer-container screen" hidden>
+        <p id="coming-soon">Coming Soon</p>
+      </section>
+
+      <!-- End Screen / Results Summary -->
+      <section id="end-screen" class="screen" hidden>
+        <h2>Game Over</h2>
+        <ul>
+          <li>Average precision: <span id="stat-precision"></span>%</li>
+          <li>Total score: <span id="stat-score"></span></li>
+          <li>Average score: <span id="stat-avg-score"></span></li>
+          <li>Streak: <span id="stat-streak"></span></li>
+          <li>Best round: <span id="stat-best-score"></span></li>
+        </ul>
+        <button id="btn-restart">New Game</button>
+      </section>
+    </main>
+
+    <!-- GitHub neon link -->
+
+      <span class="icon"></span>
+      <span class="label">
+        <span class="text byme">By Tulio Neivar</span>
+      </span>
+
+    <!-- Main JavaScript (ES module) -->
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>

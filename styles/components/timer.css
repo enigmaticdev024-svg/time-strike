@@ -1,0 +1,23 @@
+.timer-container {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin: auto; /* Center container horizontally */
+}
+
+.timer-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center wrapper inside container */
+  display: inline-block;
+}
+
+#timer {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 0 6px #ffffff, 0 0 12px #ffffff;
+  transition: opacity 0.3s ease-in-out; /* Smooth fade in/out */
+  opacity: 1; /* Fully visible by default */
+}
